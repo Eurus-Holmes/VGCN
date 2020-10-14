@@ -1,7 +1,7 @@
 # OpenVaccine
 OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction
 
-1. augmentation的一些做法
+## 1. Augmentation的一些做法
 
 2. featureengineering的一些做法
 
@@ -19,5 +19,6 @@ OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction
 - LSTM ![Figure 2](https://github.com/Eurus-Holmes/OpenVaccine/raw/main/images/LSTM.png)
 
 
-> Reference:
-> 1. [Understanding my baseline GRU model](https://www.kaggle.com/c/stanford-covid-vaccine/discussion/182303)
+## Reference
+  - [Understanding my baseline GRU model](https://www.kaggle.com/c/stanford-covid-vaccine/discussion/182303)
+  - [OpenVaccine: Simple GRU Model](https://www.kaggle.com/xhlulu/openvaccine-simple-gru-model)
