@@ -22,5 +22,6 @@ OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction
 
 
 ## Reference
+  - [How to Generate Augmentation Data](https://www.kaggle.com/its7171/how-to-generate-augmentation-data/)
   - [Understanding my baseline GRU model](https://www.kaggle.com/c/stanford-covid-vaccine/discussion/182303)
   - [OpenVaccine: Simple GRU Model](https://www.kaggle.com/xhlulu/openvaccine-simple-gru-model)
