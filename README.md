@@ -13,12 +13,10 @@ OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction
 输出数据为5-class(reactivity, deg_Mg_pH10, deg_pH10, deg_Mg_50C, deg_50C)，shape为(bs, seq_len, 5)
 类似word2vec，直接把这3个sequences分别做embedding(dimension 100)，再concatenate到1个sequence，shape为(bs, seq_len, 3\*100)，最后输入GRU/LSTM训练。
 
-- GRU
-![Figure 1](https://github.com/Eurus-Holmes/OpenVaccine/raw/main/images/GRU.png)
+- GRU ![Figure 1](https://github.com/Eurus-Holmes/OpenVaccine/raw/main/images/GRU.png)
 
-
-- LSTM
-![Figure 2](https://github.com/Eurus-Holmes/OpenVaccine/raw/main/images/LSTM.png)
+----
+- LSTM ![Figure 2](https://github.com/Eurus-Holmes/OpenVaccine/raw/main/images/LSTM.png)
 
 
 > Reference:
