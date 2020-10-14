@@ -8,3 +8,5 @@ OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction
 3. GNN的一般做法
 
 4. LSTM and/or CNN的一般做法
+
+  - [Understanding my baseline GRU model](https://www.kaggle.com/c/stanford-covid-vaccine/discussion/182303)
