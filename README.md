@@ -3,9 +3,11 @@ OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction
 
 ## 1. Augmentation的一些做法
 
-2. featureengineering的一些做法
+1.1 [ARNIE](https://github.com/DasLab/arnie): Python API to compute RNA energetics and do structure prediction across multiple secondary structure packages.
 
-3. GNN的一般做法
+## 2. featureengineering的一些做法
+
+## 3. GNN的一般做法
 
 ## 4. GRU/LSTM的一般做法
 
