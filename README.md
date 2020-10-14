@@ -12,7 +12,8 @@ OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction
   - GRU
   ![Figure 1](https://github.com/Eurus-Holmes/OpenVaccine/raw/main/images/GRU.png)
 
-
+  - LSTM
+  ![Figure 2](https://github.com/Eurus-Holmes/OpenVaccine/raw/main/images/L.png)
 
 > Reference:
 > 1. [Understanding my baseline GRU model](https://www.kaggle.com/c/stanford-covid-vaccine/discussion/182303)
