@@ -71,6 +71,134 @@ inputs -> conv1ds -> aggregation of neighborhoods -> multi head attention -> agg
 
 > 1). train denoising auto encoder model using all data including train and test data; 2). from the weights of denoising auto encoder model, finetune to predict targets such as reactivity
 
+```python
+
+## structure adj
+def get_structure_adj(train):
+    ## get adjacent matrix from structure sequence
+    
+    ## here I calculate adjacent matrix of each base pair, 
+    ## but eventually ignore difference of base pair and integrate into one matrix
+    Ss = []
+    for i in tqdm(range(len(train))):
+        seq_length = train["seq_length"].iloc[i]
+        structure = train["structure"].iloc[i]
+        sequence = train["sequence"].iloc[i]
+
+        cue = []
+        a_structures = {
+            ("A", "U") : np.zeros([seq_length, seq_length]),
+            ("C", "G") : np.zeros([seq_length, seq_length]),
+            ("U", "G") : np.zeros([seq_length, seq_length]),
+            ("U", "A") : np.zeros([seq_length, seq_length]),
+            ("G", "C") : np.zeros([seq_length, seq_length]),
+            ("G", "U") : np.zeros([seq_length, seq_length]),
+        }
+        a_structure = np.zeros([seq_length, seq_length])
+        for i in range(seq_length):
+            if structure[i] == "(":
+                cue.append(i)
+            elif structure[i] == ")":
+                start = cue.pop()
+#                 a_structure[start, i] = 1
+#                 a_structure[i, start] = 1
+                a_structures[(sequence[start], sequence[i])][start, i] = 1
+                a_structures[(sequence[i], sequence[start])][i, start] = 1
+        
+        a_strc = np.stack([a for a in a_structures.values()], axis = 2)
+        a_strc = np.sum(a_strc, axis = 2, keepdims = True)
+        Ss.append(a_strc)
+    
+    Ss = np.array(Ss)
+    print(Ss.shape)
+    return Ss
+Ss = get_structure_adj(train)
+Ss_pub = get_structure_adj(test_pub)
+Ss_pri = get_structure_adj(test_pri)
+
+
+## distance adj
+def get_distance_matrix(As):
+    ## adjacent matrix based on distance on the sequence
+    ## D[i, j] = 1 / (abs(i - j) + 1) ** pow, pow = 1, 2, 4
+    
+    idx = np.arange(As.shape[1])
+    Ds = []
+    for i in range(len(idx)):
+        d = np.abs(idx[i] - idx)
+        Ds.append(d)
+
+    Ds = np.array(Ds) + 1
+    Ds = 1/Ds
+    Ds = Ds[None, :,:]
+    Ds = np.repeat(Ds, len(As), axis = 0)
+    
+    Dss = []
+    for i in [1, 2, 4]: 
+        Dss.append(Ds ** i)
+    Ds = np.stack(Dss, axis = 3)
+    print(Ds.shape)
+    return Ds
+
+Ds = get_distance_matrix(As)
+Ds_pub = get_distance_matrix(As_pub)
+Ds_pri = get_distance_matrix(As_pri)
+
+## concat adjecent
+As = np.concatenate([As[:,:,:,None], Ss, Ds], axis = 3).astype(np.float32)
+As_pub = np.concatenate([As_pub[:,:,:,None], Ss_pub, Ds_pub], axis = 3).astype(np.float32)
+As_pri = np.concatenate([As_pri[:,:,:,None], Ss_pri, Ds_pri], axis = 3).astype(np.float32)
+del Ss, Ds, Ss_pub, Ds_pub, Ss_pri, Ds_pri
+As.shape, As_pub.shape, As_pri.shape
+
+## node
+## sequence
+def return_ohe(n, i):
+    tmp = [0] * n
+    tmp[i] = 1
+    return tmp
+
+def get_input(train):
+    ## get node features, which is one hot encoded
+    mapping = {}
+    vocab = ["A", "G", "C", "U"]
+    for i, s in enumerate(vocab):
+        mapping[s] = return_ohe(len(vocab), i)
+    X_node = np.stack(train["sequence"].apply(lambda x : list(map(lambda y : mapping[y], list(x)))))
+
+    mapping = {}
+    vocab = ["S", "M", "I", "B", "H", "E", "X"]
+    for i, s in enumerate(vocab):
+        mapping[s] = return_ohe(len(vocab), i)
+    X_loop = np.stack(train["predicted_loop_type"].apply(lambda x : list(map(lambda y : mapping[y], list(x)))))
+    
+    mapping = {}
+    vocab = [".", "(", ")"]
+    for i, s in enumerate(vocab):
+        mapping[s] = return_ohe(len(vocab), i)
+    X_structure = np.stack(train["structure"].apply(lambda x : list(map(lambda y : mapping[y], list(x)))))
+    
+    X_node = np.concatenate([X_node, X_loop], axis = 2)
+    
+    ## interaction
+    a = np.sum(X_node * (2 ** np.arange(X_node.shape[2])[None, None, :]), axis = 2)
+    vocab = sorted(set(a.flatten()))
+    print(vocab)
+    ohes = []
+    for v in vocab:
+        ohes.append(a == v)
+    ohes = np.stack(ohes, axis = 2)
+    X_node = np.concatenate([X_node, ohes], axis = 2).astype(np.float32)
+    
+    
+    print(X_node.shape)
+    return X_node
+
+X_node = get_input(train)
+X_node_pub = get_input(test_pub)
+X_node_pri = get_input(test_pri)
+```
+
 
 ## 4. GRU/LSTM的一般做法
 
