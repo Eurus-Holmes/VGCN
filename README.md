@@ -10,7 +10,7 @@ OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction
 ## 4. GRU/LSTM/CNN的一般做法
 
   - GRU
-  ![Figure 1](https://github.com/Eurus-Holmes/OpenVaccine/raw/master/images/GRU.png)
+  ![Figure 1](https://github.com/Eurus-Holmes/OpenVaccine/raw/main/images/GRU.png)
 
 
 
