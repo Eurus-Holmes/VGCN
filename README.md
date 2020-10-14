@@ -8,6 +8,8 @@ OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction
 Get candidate structures with different gamma values.
 Get the predicted_loop_type from the sequence and structure. 
 
+> It can be used to generate augmented samples that you can use for training augmentation and test time augmentation (TTA). We are essentially generating new structures and predicted_loop_types for each sequence using the software that was originally used to create them (ARNIE, ViennaRNA, and bpRNA).
+
 
 
 ## 2. Feature Engineering的一些做法
