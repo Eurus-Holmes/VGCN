@@ -200,6 +200,12 @@ X_node_pri = get_input(test_pri)
 ```
 
 
+3.2 Deeper GCN
+
+![Figure 1](https://github.com/Eurus-Holmes/OpenVaccine/raw/main/images/DeeperGCN.png)
+
+
+
 ## 4. GRU/LSTM的一般做法
 
 输入数据为3个sequences(sequence, structure, predicted_loop_type)，shape为(bs, seq_len, 3);
