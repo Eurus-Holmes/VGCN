@@ -8,7 +8,15 @@ OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction
 Get candidate structures with different gamma values.
 Get the predicted_loop_type from the sequence and structure. 
 
-1.2 Add BPP_nb feature.
+
+
+## 2. Feature Engineering的一些做法
+
+2.1 聚类。Clustering for GroupKFold, expecting more accurate CV by putting similar RNAs into the same fold.
+
+2.2 模型ensemble
+
+2.3 Add BPP_nb feature.
 
 ```python
 # additional features
@@ -46,13 +54,10 @@ train['bpps_nb'] = read_bpps_nb(train)
 test['bpps_nb'] = read_bpps_nb(test)
 ```
 
-> Note: Some features are very dangerous because of the different sequence lengths of private test. Even if our CV or public score improves, we should not use them.
+> Note1: The bpps folder contains Base Pairing Probabilities matrices for each sequence. These matrices give the probability that each pair of nucleotides in the RNA forms a base pair. Each matrix is a symmetric square matrix the same length as the sequence.
+
+> Note2: Some features are very dangerous because of the different sequence lengths of private test. Even if our CV or public score improves, we should not use them.
 > [Dangerous Features](https://www.kaggle.com/its7171/dangerous-features)
-
-## 2. Feature Engineering的一些做法
-
-2.1 聚类。Clustering for GroupKFold, expecting more accurate CV by putting similar RNAs into the same fold.
-2.2 模型ensemble
 
 
 
