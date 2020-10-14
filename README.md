@@ -8,7 +8,14 @@ OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction
 Get candidate structures with different gamma values.
 Get the predicted_loop_type from the sequence and structure. 
 
-## 2. featureengineering的一些做法
+1.2 Add BPP_nb feature.
+
+## 2. Feature Engineering的一些做法
+
+2.1 聚类。Clustering for GroupKFold, expecting more accurate CV by putting similar RNAs into the same fold.
+2.2 模型ensemble
+
+
 
 ## 3. GNN的一般做法
 
@@ -28,5 +35,6 @@ Get the predicted_loop_type from the sequence and structure.
   - [How to Generate Augmentation Data](https://www.kaggle.com/its7171/how-to-generate-augmentation-data/)
   - [How to Use ARNIE on Kaggle Notebook](https://www.kaggle.com/its7171/how-to-use-arnie-on-kaggle-notebook/)
   - [How to Generate predicted_loop_type](https://www.kaggle.com/its7171/how-to-generate-predicted-loop-type)
+  - [GRU+LSTM with feature engineering and augmentation](https://www.kaggle.com/its7171/gru-lstm-with-feature-engineering-and-augmentation/)
   - [Understanding my baseline GRU model](https://www.kaggle.com/c/stanford-covid-vaccine/discussion/182303)
   - [OpenVaccine: Simple GRU Model](https://www.kaggle.com/xhlulu/openvaccine-simple-gru-model)
