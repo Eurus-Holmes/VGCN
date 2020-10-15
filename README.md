@@ -229,16 +229,16 @@ Training: Bert-Like Pretraining. Then Fine Tuning.
   - [How to Generate Augmentation Data](https://www.kaggle.com/its7171/how-to-generate-augmentation-data/)
   - [How to Use ARNIE on Kaggle Notebook](https://www.kaggle.com/its7171/how-to-use-arnie-on-kaggle-notebook/)
   - [How to Generate predicted_loop_type](https://www.kaggle.com/its7171/how-to-generate-predicted-loop-type)
-  - [GRU+LSTM with feature engineering and augmentation](https://www.kaggle.com/its7171/gru-lstm-with-feature-engineering-and-augmentation/)
+  - [GRU+LSTM with feature engineering and augmentation](https://www.kaggle.com/its7171/gru-lstm-with-feature-engineering-and-augmentation/) | 0.2516
   - [Dangerous Features](https://www.kaggle.com/its7171/dangerous-features)
   - [OpenVaccine - checkout BPPs](https://www.kaggle.com/hidehisaarai1213/openvaccine-checkout-bpps)
   - [What is the bpps folder and the data in each file?](https://www.kaggle.com/c/stanford-covid-vaccine/discussion/182021#1006800)
-  - [OpenVaccine - GRU + LSTM](https://www.kaggle.com/tuckerarrants/openvaccine-gru-lstm)
-  - [[covid] AE pretrain + GNN + Attn + CNN](https://www.kaggle.com/mrkmakr/covid-ae-pretrain-gnn-attn-cnn)
+  - [OpenVaccine - GRU + LSTM](https://www.kaggle.com/tuckerarrants/openvaccine-gru-lstm) | 0.25478
+  - [[covid] AE pretrain + GNN + Attn + CNN](https://www.kaggle.com/mrkmakr/covid-ae-pretrain-gnn-attn-cnn) | 0.24738
   - [Graph Transfomer](https://www.kaggle.com/cpmpml/graph-transfomer)
-  - [OpenVaccine - DeeperGCN](https://www.kaggle.com/symyksr/openvaccine-deepergcn)
+  - [OpenVaccine - DeeperGCN](https://www.kaggle.com/symyksr/openvaccine-deepergcn) | 0.25641
   - [ogbn_proteins_deepgcn](https://github.com/rusty1s/pytorch_geometric/blob/master/examples/ogbn_proteins_deepgcn.py)
-  - [OpenVaccine. EDA | Feature engineering | Modeling](https://www.kaggle.com/isaienkov/openvaccine-eda-feature-engineering-modeling/)
-  - [Open Waccine: Pytorch AE pretrain](https://www.kaggle.com/takadaat/openvaccine-pytorch-ae-pretrain)
+  - [OpenVaccine. EDA | Feature engineering | Modeling](https://www.kaggle.com/isaienkov/openvaccine-eda-feature-engineering-modeling/) | 0.30103
+  - [Open Waccine: Pytorch AE pretrain](https://www.kaggle.com/takadaat/openvaccine-pytorch-ae-pretrain) | 0.24557
   - [Understanding my baseline GRU model](https://www.kaggle.com/c/stanford-covid-vaccine/discussion/182303)
-  - [OpenVaccine: Simple GRU Model](https://www.kaggle.com/xhlulu/openvaccine-simple-gru-model)
+  - [OpenVaccine: Simple GRU Model](https://www.kaggle.com/xhlulu/openvaccine-simple-gru-model) | 0.27024
