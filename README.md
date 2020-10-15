@@ -200,7 +200,14 @@ X_node_pri = get_input(test_pri)
 ```
 
 
-3.2 Deeper GCN
+3.2 Graph Transformer v2.0
+
+Model: Convolution + Transfomer + GRU.
+
+Training: Bert-Like Pretraining. Then Fine Tuning.
+
+
+3.3 Deeper GCN
 
 ![Figure 1](https://github.com/Eurus-Holmes/OpenVaccine/raw/main/images/DeeperGCN.png)
 
