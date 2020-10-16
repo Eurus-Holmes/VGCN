@@ -206,10 +206,12 @@ Model: Convolution + Transfomer + GRU.
 
 Training: Bert-Like Pretraining. Then Fine Tuning.
 
+![Figure 4](https://github.com/Eurus-Holmes/OpenVaccine/raw/main/images/GTN.png)
+
 
 3.3 Deeper GCN
 
-![Figure 1](https://github.com/Eurus-Holmes/OpenVaccine/raw/main/images/DeeperGCN.png)
+![Figure 3](https://github.com/Eurus-Holmes/OpenVaccine/raw/main/images/DeeperGCN.png)
 
 
 
