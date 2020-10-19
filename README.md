@@ -242,5 +242,6 @@ Training: Bert-Like Pretraining. Then Fine Tuning.
   - [ogbn_proteins_deepgcn](https://github.com/rusty1s/pytorch_geometric/blob/master/examples/ogbn_proteins_deepgcn.py)
   - [OpenVaccine. EDA | Feature engineering | Modeling](https://www.kaggle.com/isaienkov/openvaccine-eda-feature-engineering-modeling/) | 0.30103
   - [Open Waccine: Pytorch AE pretrain](https://www.kaggle.com/takadaat/openvaccine-pytorch-ae-pretrain) | 0.24557
+  - [CNN-Transformer-RNN + Feature Eng & Data Aug](https://www.kaggle.com/nasirkhalid24/cnn-transformer-enc-rnn-feature-eng-data-aug/) | 0.2522
   - [Understanding my baseline GRU model](https://www.kaggle.com/c/stanford-covid-vaccine/discussion/182303)
   - [OpenVaccine: Simple GRU Model](https://www.kaggle.com/xhlulu/openvaccine-simple-gru-model) | 0.27024
