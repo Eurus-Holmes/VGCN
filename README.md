@@ -1,6 +1,8 @@
 # OpenVaccine
 OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction
 
+> [Official website](https://www.kaggle.com/c/stanford-covid-vaccine)
+
 ## 1. Augmentation的一些做法
 
 1.1 使用[ARNIE](https://github.com/DasLab/arnie): Python API to compute RNA energetics and do structure prediction across multiple secondary structure packages. 得到新的structure和predicted_loop_type.
