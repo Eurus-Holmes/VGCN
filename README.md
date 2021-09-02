@@ -1,2 +1,2 @@
-# Dynamic Virtual Graph Significance Networks (DVGSN)
+# Virtual Graph Convolutional Networks (VGCN)
 
